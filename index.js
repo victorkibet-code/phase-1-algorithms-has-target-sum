@@ -1,6 +1,23 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+}function hasTargetSum(nums, target) {
+  const visited = new Set();
+
+  for (let num of nums) {
+    const diff = target - num;
+
+    if (visited.has(diff)) {
+      return true;
+    }
+
+    visited.add(num);
+  }
+
+  return false;
 }
+
+module.exports = hasTargetSum;
+
 
 /* 
   Write the Big O time complexity of your function here
